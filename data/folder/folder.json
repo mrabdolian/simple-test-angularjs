@@ -1,0 +1,19 @@
+[
+    {
+        "name": "folder3",
+        "type": "dir"
+    },
+    {
+        "name": "folder1",
+        "type": "dir"
+    },
+    {
+        "name": "folder2",
+        "type": "dir"
+    },
+    {
+        "name": "image1",
+        "type": "image",
+        "url": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+    }
+]

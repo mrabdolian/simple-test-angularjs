@@ -1,0 +1,15 @@
+[
+    {
+        "name": "subfolder1_1",
+        "type": "dir"
+    },
+    {
+        "name": "subfolder1_2",
+        "type": "dir"
+    },
+    {
+        "name": "image1_1",
+        "type": "image",
+        "url": "http://"
+    }
+]

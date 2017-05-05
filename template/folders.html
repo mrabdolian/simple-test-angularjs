@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="row well">
+        <button class="btn btn-default header-btn-left" type="button" ng-click="up()">
+            <span class="glyphicon glyphicon-level-up"></span>
+        </button>
+
+        <h3 class="dir-name">{{model.name}} <span class="badge">{{model.items.length}}</span></h3>
+        <p class="gray">{{model.path}}</p>
+
+        <div class="header-btn-right">
+            <button class="btn btn-warning" type="button" ng-click="addImage()">
+                <span class="glyphicon glyphicon-plus"></span>
+                <span class="hidden-xs">Add image</span>
+                <span class="visible-xs"><span class="glyphicon glyphicon-picture"></span></span>
+            </button>
+            <button class="btn btn-primary" type="button" ng-click="createFolder()">
+                <span class="glyphicon glyphicon-plus"></span>
+                <span class="hidden-xs">Create folder</span>
+                <span class="visible-xs"><span class="glyphicon glyphicon-folder-open"></span></span>
+            </button>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+    <ul class="list-group">
+        <li class="list-group-item row">
+            <div class="col-xs-6 col-sm-7 col-md-8 seperator" ng-click="changeOrderDirection()">
+                <span class="glyphicon glyphicon-arrow-up" ng-show="model.orderReverse"></span>
+                <span class="glyphicon glyphicon-arrow-down" ng-hide="model.orderReverse"></span>
+                <label>Name</label>
+            </div>
+            <div class="col-xs-6 col-sm-5 col-md-4">
+                <label>Actions</label>
+            </div>
+        </li>
+        <li class="list-group-item row" ng-hide="model.items[0]">
+            <div class="col-xs-12">
+                <div class="text-center gray">
+                    <h3>Nothing here!</h3>
+                    <p>Create a folder first!</p>
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item row" ng-repeat="item in model.items | orderBy: 'name':model.orderReverse">
+            <div class="col-xs-6 col-sm-7 col-md-8 seperator item-name">
+                <div ng-show="item.type=='dir'">
+                    <span class="glyphicon glyphicon-folder-open"></span>&nbsp;
+                    <a href="#" ng-click="load(item.name)">
+                        <span>{{item.name}}/</span>
+                    </a>
+                </div>
+                <div ng-show="item.type=='image'">
+                    <span class="glyphicon glyphicon-picture"></span>&nbsp;
+                    <a ng-href="{{item.url}}" target="_blank">
+                        <span>{{item.name}}</span>
+                    </a></div>
+            </div>
+            <div class="col-xs-6 col-sm-5 col-md-4">
+                <button class="btn btn-default" type="button" ng-click="rename(item)">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    <span class="hidden-xs">Rename</span>
+                </button>
+                <button class="btn btn-default" type="button" ng-click="delete(item)">
+                    <span class="glyphicon glyphicon-trash text-danger"></span>
+                    <span class="hidden-xs text-danger">Delete</span>
+                </button>
+                <button class="btn btn-default" type="button" ng-show="item.type=='image'" ng-click="move(item)">
+                    <span class="glyphicon glyphicon-arrow-right text-primary"></span>
+                    <span class="hidden-xs text-primary">Move</span>
+                </button>
+            </div>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,43 @@
+.gray {
+    color: gray;
+}
+
+.seperator {
+    border-right: 1px solid #ddd;
+}
+
+.well {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: none;
+}
+
+.item-name {
+    padding-top: 6px;
+}
+
+.dir-name {
+    margin-left: 50px;
+}
+
+.header-btn-left {
+    position: absolute;
+    margin-top: 15px;
+}
+
+.header-btn-right {
+    position: relative;
+    margin-top: -60px;
+    float: right;
+}
+
+[ng-click] {
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+
+    .visible-xs {
+        display: inline-block!important;
+    }
+}
