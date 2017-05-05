@@ -1,5 +1,5 @@
 # A simple Angular app
-**A very simple app based on angular.js with simulated (client-side) api**
+**A simple app based on angular.js**
 
 Skills & Frameworks used: HTML, CSS, AngularJS, Bootstrap
 
